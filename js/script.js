@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
 header.innerHTML = `
     <div class="container">
         <div class="logo">
-            <h1>بلدية أسيا</h1>
+        <img src="images/lebanese cedar.png" alt="Logo" class="logo-img">
+            <h1> الجمهورية اللبنانية - بلدية أسيا </h1>
         </div>
         <nav>
             <ul class="nav-links">
