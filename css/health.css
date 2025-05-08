@@ -1,0 +1,380 @@
+/* Health Page Styles */
+.health-services {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header p {
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-tabs {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-btn {
+    padding: 15px 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-light);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--secondary-color);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+}
+
+.tab-content.active {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.tab-text {
+    flex: 1;
+}
+
+.tab-text h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.tab-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.benefits-list {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.benefits-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.benefits-list i {
+    color: var(--secondary-color);
+    margin-left: 10px;
+}
+
+.tab-image {
+    flex: 1;
+}
+
+.tab-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Health Centers */
+.health-centers {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.centers-map {
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-image {
+    width: 100%;
+    display: block;
+}
+
+.map-pointer {
+    position: absolute;
+    cursor: pointer;
+}
+
+.map-pointer .pointer-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+.map-pointer .pointer-info {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    display: none;
+}
+
+.map-pointer.active .pointer-info {
+    display: block;
+}
+
+.map-pointer .pointer-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.map-pointer .pointer-info p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 5px 0;
+}
+
+.map-pointer .pointer-info p i {
+    margin-left: 5px;
+}
+
+.centers-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.center-card {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.center-card:hover {
+    transform: translateY(-5px);
+}
+
+.center-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.5rem;
+}
+
+.center-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.center-card p {
+    margin: 10px 0;
+    color: var(--text-light);
+}
+
+.center-card p i {
+    margin-left: 5px;
+}
+
+/* Emergency Section */
+.emergency-section {
+    padding: 80px 0;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.emergency-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.emergency-content p {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+}
+
+.emergency-numbers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.emergency-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.emergency-item:hover {
+    transform: translateY(-5px);
+}
+
+.emergency-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.emergency-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.emergency-info p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    direction: ltr;
+}
+
+/* Health Tips */
+.health-tips {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tip-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tip-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.tip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tip-card:hover .tip-image img {
+    transform: scale(1.05);
+}
+
+.tip-content {
+    padding: 20px;
+}
+
+.tip-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.read-more i {
+    margin-right: 5px;
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.read-more:hover i {
+    transform: translateX(-5px);
+}
+
+/* Responsive Styles for Health Page */
+@media (max-width: 992px) {
+    .tab-content {
+        flex-direction: column;
+    }
+    
+    .tab-image {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tab-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .emergency-item {
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tab-buttons {
+        flex-direction: column;
+    }
+    
+    .map-pointer .pointer-info {
+        right: auto;
+        left: 30px;
+    }
+    
+    .emergency-numbers {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .emergency-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}

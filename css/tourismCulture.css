@@ -1,0 +1,432 @@
+/* Tourism Intro */
+.tourism-intro {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.tourism-intro .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.intro-content {
+    flex: 1;
+}
+
+.intro-content h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.stat-item span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stat-item p {
+    margin: 0;
+    color: var(--text-light);
+}
+
+.intro-image {
+    flex: 1;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Historical Sites */
+.historical-sites {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.site-card {
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.site-image {
+    height: 300px;
+    position: relative;
+}
+
+.site-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.site-card:hover .site-image img {
+    transform: scale(1.1);
+}
+
+.site-overlay {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.site-card:hover .site-overlay {
+    transform: translateY(0);
+}
+
+.site-overlay h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.site-overlay p {
+    margin-bottom: 15px;
+}
+
+.owl-nav {
+    display: none;
+    position: absolute;
+    top: -70px;
+    right: 0;
+}
+
+.owl-prev, .owl-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    margin-left: 10px !important;
+    transition: all 0.3s ease;
+}
+
+.owl-prev:hover, .owl-next:hover {
+    background-color: var(--primary-color) !important;
+}
+
+/* Cultural Events */
+.cultural-events {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.events-tabs {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+    padding: 15px 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-light);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--secondary-color);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.event-date {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    min-width: 70px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-date.past {
+    background-color: var(--text-light);
+}
+
+.event-date .day {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.event-date .year {
+    font-size: 0.8rem;
+}
+
+.event-details {
+    padding: 15px;
+    flex: 1;
+}
+
+.event-details h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.event-details p {
+    margin: 5px 0;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.event-details p i {
+    margin-left: 5px;
+}
+
+.event-details .btn {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* Museums Section */
+.museums-section {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.museums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+}
+
+.museum-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.museum-image {
+    flex: 1;
+}
+
+.museum-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.museum-info {
+    flex: 1;
+    padding: 20px;
+}
+
+.museum-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.museum-meta p {
+    margin: 10px 0;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+.museum-meta i {
+    margin-left: 5px;
+}
+
+.museum-info .btn {
+    margin-top: 15px;
+}
+
+/* Tourism Services */
+.tourism-services {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.service-card a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.service-card a i {
+    font-size: 0.8rem;
+    margin-right: 5px;
+    margin-bottom: 0;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover a i {
+    transform: translateX(-5px);
+}
+
+@media (max-width: 992px) {
+    .tourism-intro .container {
+        flex-direction: column;
+    }
+    
+    .museum-card {
+        flex-direction: column;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+    }
+    
+    .tab-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .event-card {
+        flex-direction: column;
+    }
+    
+    .event-date {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .event-date .day, 
+    .event-date .month,
+    .event-date .year {
+        margin: 0;
+    }
+
+    .museums-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+    }
+    
+    .owl-nav {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}

@@ -27,24 +27,19 @@ body {
     background-color: #f5f5f5;
     color: var(--text-color);
     direction: rtl;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.gtranslate_wrapper{
-    color: var(--light-color);
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* translate buttons GTranslate */
+.gtranslate_wrapper {
+    margin: 5px;
+  }
 
-.gtranslate_wrapper a{
-    color: var(--light-color);
+  a.glink{
+    font-size: .8rem;
     padding: 0;
     margin: 0 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+  }
 
 section .container {
     width: 100%;
@@ -130,6 +125,8 @@ header .container {
 
 nav ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
     gap: 20px;
 }
@@ -443,6 +440,7 @@ footer {
         color: var(--light-color);
         flex-direction: column;
         align-items: flex-start;
+        justify-content: start;
         padding: 30px 20px 0;
         transition: right 0.3s ease;
         z-index: 9;
@@ -491,9 +489,13 @@ footer {
 }
 
 
-/* ABOUT PAGE */
+
+
+
+/* Banner Section For all pages */
+
 .page-banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/assia 2.jpg') no-repeat center center/cover;
     height: 300px;
     display: flex;
     align-items: center;
@@ -540,284 +542,16 @@ footer {
     color: var(--secondary-color);
 }
 
-/* About Content */
-.about-section {
-    padding: 80px 0;
-    background-color: white;
-}
-
-.about-content {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-}
-
-.about-text {
-    flex: 1;
-}
-
-.about-text h2 {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.about-text h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin: 25px 0 15px;
-}
-
-.about-text p {
-    line-height: 1.8;
-    color: var(--text-color);
-}
-
-.about-image {
-    flex: 1;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* History Timeline */
-.history-section {
-    padding: 80px 20px;
-    background-color: #f9f9f9;
-    direction: rtl;
-}
-
-.timeline {
-    position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding-left: 60px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: var(--secondary-color);
-}
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 40px;
-}
-
-.timeline-year {
-    position: absolute;
-    left: -80px;
-    top: 0;
-    width: 60px;
-    height: 60px;
-    background-color: var(--secondary-color);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.timeline-content {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin-right: 60px;
-}
-
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: 20px;
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: 15px solid transparent;
-    border-left: 15px solid white;
-}
-
-.timeline-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-/* Organization Chart */
-.organization-section {
-    padding: 80px 0;
-    background-color: white;
-}
-
-.org-chart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.org-level {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.org-position {
-    margin: 0 15px;
-    position: relative;
-}
-
-.org-position::after {
-    content: '';
-    position: absolute;
-    top: -15px;
-    right: 50%;
-    transform: translateX(50%);
-    width: 2px;
-    height: 15px;
-    background-color: var(--secondary-color);
-}
-
-.org-box {
-    background-color: var(--light-color);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    min-width: 180px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-}
-
-.org-box h3 {
-    font-size: 1rem;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
-.org-box p {
-    font-size: 0.9rem;
-}
-
-.mayor .org-box {
-    background-color: var(--secondary-color);
-    color: white;
-}
-
-.mayor .org-box h3 {
-    color: white;
-}
-
-/* Statistics Section */
-.stats-section {
-    padding: 80px 0;
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.stats-section .section-title {
-    color: white;
-}
-
-.stats-section .section-title::after {
-    background-color: var(--secondary-color);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 30px;
-}
-
-.stat-card {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-}
-
-.stat-card i {
-    font-size: 2rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
-
-.stat-card h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.stat-card p{
-    font-size: 1rem;
-}
-
-/* Responsive Styles for About Page */
 @media (max-width: 992px) {
     .breadcrumb li:not(:last-child)::after{
         top: 4px;
     }
 
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-image {
-        margin-top: 30px;
-    }
-    
-    .org-level {
-        flex-wrap: wrap;
-    }
-    
-    .org-position {
-        margin: 15px;
-    }
-
     .page-banner {
         height: 250px;
     }
-    
+
     .page-banner h2 {
         font-size: 2rem;
-    }
-    
-    .timeline {
-        padding-right: 30px;
-        padding-left: 0px;
-    }
-
-    .timeline-content{
-        margin-right: 20px;
-    }
-    
-    .timeline::before {
-        right: 10px;
-    }
-
-
-    .timeline-content::before{
-        display: none;
-    }
-    
-    .timeline-year {
-        right: -40px;
-        width: 45px;
-        height: 45px;
-        font-size: .6rem;
-        text-align: center;
     }
 }
