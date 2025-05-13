@@ -46,57 +46,92 @@
     </section>
 
     <!-- News Grid -->
-    <section class="news-grid-section">
-        <div class="container">
-            <div class="news-grid">
-                <!-- News Item 1 -->
-                <div class="news-item" data-category="project">
-                    <div class="news-img">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-date"><i class="far fa-calendar-alt"></i> 15 مايو 2023</span>
-                            <span class="news-category">مشاريع</span>
-                        </div>
-                        <h3 class="news-title">افتتاح مشروع الطريق الدائري الجديد</h3>
-                        <p class="news-excerpt">تم اليوم افتتاح الطريق الدائري الجديد الذي يربط الأحياء الشمالية بالجنوبية، بمشاركة رئيس البلدية وعدد من المسؤولين.</p>
-                        <a href="news-single.html" class="read-more">إقرأ المزيد <i class="fas fa-arrow-left"></i></a>
-                    </div>
-                </div>
-
-                <!-- News Item 2 -->
-                <div class="news-item" data-category="event">
-                    <div class="news-img">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-meta">
-                            <span class="news-date"><i class="far fa-calendar-alt"></i> 12 مايو 2023</span>
-                        <span class="news-category">فعاليات</span>
-                        </div>
-                        <h3 class="news-title">انطلاق مهرجان الربيع الثقافي في حديقة المدينة</h3>
-                        <p class="news-excerpt">تنطلق فعاليات مهرجان الربيع الثقافي غداً ويستمر لمدة أسبوع، يشمل عروضاً فنية ومسرحية وورش عمل للأطفال.</p>
-                        <a href="news-single.html" class="read-more">إقرأ المزيد <i class="fas fa-arrow-left"></i></a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Pagination -->
-            <div class="pagination">
-                <a href="#" class="page-nav disabled"><i class="fas fa-angle-right"></i></a>
-                <a href="#" class="page-number active">1</a>
-                <a href="#" class="page-number">2</a>
-                <a href="#" class="page-number">3</a>
-                <a href="#" class="page-number">4</a>
-                <a href="#" class="page-nav"><i class="fas fa-angle-left"></i></a>
-            </div>
-        </div>
-    </section>
+<section class="news-grid-section">
+  <div class="container">
+    <div class="news-grid" id="newsGrid">
+      <!-- News items will be injected here by JavaScript -->
+    </div>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer id="footer">
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+  const newsGrid = document.getElementById("newsGrid");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  // Load news from JSON
+  fetch("js/news.json")
+    .then((response) => response.json())
+    .then((data) => {
+      let newsList = data.news;
+
+      // Function to display news
+      function displayNews(filteredNews) {
+        newsGrid.innerHTML = ""; // Clear previous content
+
+        filteredNews.forEach((item) => {
+          const newsItem = document.createElement("div");
+          newsItem.classList.add("news-item");
+          newsItem.setAttribute("data-category", getCategoryKey(item.category));
+          newsItem.setAttribute("data-id", item.id);
+
+          newsItem.innerHTML = `
+            <div class="news-content">
+              <div class="news-meta">
+                <span class="news-date"><i class="far fa-calendar-alt"></i> ${item.date}</span>
+                <span class="news-category" style="background-color: ${item['category color']}">${item.category}</span>
+              </div>
+              <h3 class="news-title">${item.title}</h3>
+              <p class="news-excerpt">${item.excerpt}</p>
+              <a href="news-single.html?id=${item.id}" class="read-more">إقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+            </div>
+          `;
+          
+          newsGrid.appendChild(newsItem);
+        });
+      }
+
+      // Map category names to filter keys
+      function getCategoryKey(categoryName) {
+        const categories = {
+          إعلانات: "announcement",
+          فعاليات: "event",
+          مشاريع: "project",
+          جوائز: "award",
+        };
+        return categories[categoryName] || "other";
+      }
+
+      // Filter logic
+      filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          filterButtons.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const filter = btn.getAttribute("data-filter");
+
+          if (filter === "all") {
+            displayNews(newsList);
+          } else {
+            const filtered = newsList.filter((item) => getCategoryKey(item.category) === filter);
+            displayNews(filtered);
+          }
+        });
+      });
+
+      // Initial display
+      displayNews(newsList);
+    })
+    .catch((error) => {
+      console.error("Error fetching news:", error);
+      newsGrid.innerHTML = "<p>حدث خطأ أثناء تحميل الأخبار.</p>";
+    });
+});
+    </script>
 </body>
 </html>

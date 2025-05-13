@@ -88,13 +88,12 @@
 }
 
 .news-category {
-    font-size: 0.75rem;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 30px;
-    display: inline-block;
-    margin-bottom: 10px;
+  font-size: 0.75rem;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .news-content {
