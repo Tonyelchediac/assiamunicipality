@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
                 <p>تقدم بلدية المدينة مجموعة من الخدمات الصحية والبرامج المجتمعية لضمان رفاهية المواطنين</p>
             </div>
             
-            <div class="services-tabs">
+            <div class="facilities-tabs">
                 <div class="tab-buttons">
                     <button class="tab-btn active" data-tab="clinics">العيادات الصحية</button>
                     <button class="tab-btn" data-tab="awareness">التوعية الصحية</button>
@@ -233,19 +233,17 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Tabs Functionality
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-        
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(btn => btn.classList.remove('active'));
-                tabContents.forEach(content => content.classList.remove('active'));
-                btn.classList.add('active');
-                const tabId = btn.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
         });
+    });
     </script>
 </body>
 </html>

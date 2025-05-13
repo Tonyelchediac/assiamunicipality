@@ -1,5 +1,14 @@
-/* ABOUT PAGE */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+}
 
+/* ABOUT PAGE */
 .about-section {
     padding: 80px 0;
     background-color: white;
@@ -28,6 +37,7 @@
 }
 
 .about-text p {
+    font-size: 1.1rem;
     line-height: 1.8;
     color: var(--text-color);
 }

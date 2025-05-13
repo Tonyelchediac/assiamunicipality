@@ -1,22 +1,39 @@
-/* Health Page Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+}
+
+/* Health Services */
 .health-services {
     padding: 80px 0;
-    background-color: #f9f9f9;
+    background-color: white;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
 .section-header p {
+    font-size: 1.1rem;
     color: var(--text-light);
     max-width: 700px;
     margin: 0 auto;
 }
 
-.services-tabs {
-    background-color: white;
+.facilities-tabs {
+    background-color: #f9f9f9;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -24,7 +41,7 @@
 
 .tab-buttons {
     display: flex;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
 }
 
 .tab-btn {
@@ -55,148 +72,186 @@
 .tab-content {
     display: none;
     padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .tab-content.active {
     display: flex;
-    gap: 40px;
-    align-items: center;
 }
 
 .tab-text {
     flex: 1;
+    min-width: 300px;
 }
 
 .tab-text h3 {
-    font-size: 1.5rem;
     color: var(--primary-color);
     margin-bottom: 20px;
 }
 
-.tab-text p {
-    line-height: 1.8;
+.tab-text ul.benefits-list {
+    list-style: none;
+    padding: 0;
     margin-bottom: 20px;
 }
 
-.benefits-list {
-    list-style: none;
-    margin: 25px 0;
-}
-
-.benefits-list li {
+.tab-text ul.benefits-list li {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
+    gap: 10px;
+    color: var(--text-light);
 }
 
-.benefits-list i {
+.tab-text ul.benefits-list li i {
     color: var(--secondary-color);
-    margin-left: 10px;
 }
 
 .tab-image {
     flex: 1;
+    min-width: 300px;
+    text-align: center;
 }
 
 .tab-image img {
     width: 100%;
+    max-width: 500px;
     border-radius: 10px;
 }
 
-/* Health Centers */
-.health-centers {
-    padding: 80px 0;
+.facilities-tabs {
     background-color: white;
-}
-
-.centers-map {
-    position: relative;
-    margin-bottom: 50px;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.map-image {
-    width: 100%;
-    display: block;
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
 }
 
-.map-pointer {
-    position: absolute;
+.tab-btn {
+    padding: 15px 25px;
+    background: none;
+    border: none;
     cursor: pointer;
+    font-weight: 500;
+    color: var(--text-light);
+    position: relative;
+    transition: all 0.3s ease;
 }
 
-.map-pointer .pointer-dot {
-    width: 20px;
-    height: 20px;
-    background-color: var(--secondary-color);
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 2px var(--secondary-color);
+.tab-btn.active {
+    color: var(--secondary-color);
 }
 
-.map-pointer .pointer-info {
+.tab-btn.active::after {
+    content: '';
     position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    width: 200px;
-    display: none;
+    bottom: -1px;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
 }
 
-.map-pointer.active .pointer-info {
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
     display: block;
 }
 
-.map-pointer .pointer-info h4 {
+.facility-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.facility-image {
+    height: 200px;
+}
+
+.facility-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.facility-info {
+    padding: 20px;
+}
+
+.facility-info h3 {
     color: var(--primary-color);
     margin-bottom: 10px;
 }
 
-.map-pointer .pointer-info p {
-    font-size: 0.9rem;
+.facility-info p {
+    margin: 8px 0;
     color: var(--text-light);
-    margin: 5px 0;
+    display: flex;
+    align-items: center;
 }
 
-.map-pointer .pointer-info p i {
+.facility-info p i {
     margin-left: 5px;
+}
+
+.owl-nav {
+    position: absolute;
+    top: -60px;
+    right: 0;
+}
+
+.owl-prev,
+.owl-next {
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    margin-left: 10px !important;
+    transition: all 0.3s ease;
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+    background-color: var(--primary-color) !important;
+}
+
+/* Health Centers */
+.health-centers {
+    padding: 80px 0;
+    background-color: #f9f9f9;
 }
 
 .centers-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
 .center-card {
-    background-color: #f9f9f9;
-    padding: 25px;
+    background-color: white;
     border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.center-card:hover {
-    transform: translateY(-5px);
 }
 
 .center-icon {
-    width: 60px;
-    height: 60px;
-    background-color: var(--secondary-color);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
 }
 
 .center-card h3 {
@@ -205,8 +260,9 @@
 }
 
 .center-card p {
-    margin: 10px 0;
+    margin-bottom: 5px;
     color: var(--text-light);
+    font-size: 0.95rem;
 }
 
 .center-card p i {
@@ -216,57 +272,59 @@
 /* Emergency Section */
 .emergency-section {
     padding: 80px 0;
-    background-color: var(--primary-color);
-    color: white;
+    background-color: white;
+}
+
+.emergency-content {
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
 }
 
 .emergency-content h2 {
     font-size: 2rem;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 .emergency-content p {
-    max-width: 700px;
-    margin: 0 auto 40px;
     font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
 }
 
 .emergency-numbers {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 30px;
-    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .emergency-item {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 30px;
+    background-color: #f9f9f9;
+    padding: 20px 30px;
     border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    flex: 1;
     min-width: 250px;
-    transition: transform 0.3s ease;
-}
-
-.emergency-item:hover {
-    transform: translateY(-5px);
+    max-width: 300px;
+    text-align: center;
 }
 
 .emergency-icon {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
     color: var(--secondary-color);
+    margin-bottom: 10px;
 }
 
 .emergency-info h3 {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
 .emergency-info p {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-light);
     direction: ltr;
 }
 
@@ -278,7 +336,7 @@
 
 .tips-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
@@ -287,26 +345,22 @@
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.tip-image {
-    height: 200px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .tip-image img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.tip-card:hover .tip-image img {
-    transform: scale(1.05);
 }
 
 .tip-content {
     padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .tip-content h3 {
@@ -314,17 +368,22 @@
     margin-bottom: 10px;
 }
 
+.tip-content p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    flex: 1;
+}
+
 .read-more {
-    display: inline-flex;
-    align-items: center;
     color: var(--secondary-color);
     font-weight: 500;
-    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .read-more i {
-    margin-right: 5px;
     font-size: 0.8rem;
+    margin-right: 5px;
     transition: transform 0.3s ease;
 }
 
@@ -332,49 +391,26 @@
     transform: translateX(-5px);
 }
 
-/* Responsive Styles for Health Page */
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* Responsive Design */
 @media (max-width: 992px) {
     .tab-content {
         flex-direction: column;
-    }
-    
-    .tab-image {
-        margin-top: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .tab-buttons {
-        flex-wrap: wrap;
-    }
-    
-    .tab-btn {
-        flex: 1;
-        min-width: 120px;
-    }
-    
-    .emergency-item {
-        min-width: 200px;
-    }
-}
-
-@media (max-width: 576px) {
-    .tab-buttons {
-        flex-direction: column;
-    }
-    
-    .map-pointer .pointer-info {
-        right: auto;
-        left: 30px;
-    }
-    
-    .emergency-numbers {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .emergency-item {
-        width: 100%;
-        max-width: 300px;
+        align-items: stretch;
     }
 }

@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinksData = [
     { url: "index.html", text: "رئيسية" },
     { url: "about.html", text: "عن البلدية" },
-    { url: "news.html", text: "أخبارنا" },
+    { url: "news.html", text: "آخر الاخبار" },
     { url: "health.html", text: "صحة ورعاية إجتماعية" },
     { url: "tourismCulture.html", text: "سياحة وثقافة" },
-    { url: "#", text: "رياضة ونشاطات" },
-    { url: "#", text: "نظافة البيئة" },
-    { url: "#", text: "تواصل" },
+    { url: "SportsActivities.html", text: "رياضة ونشاطات" },
+    { url: "environmentCleanliness.html", text: "نظافة البيئة" },
+    { url: "contact.html", text: "تواصل" },
     { url: "#electronic-services", text: "خدمات إلكترونية" },
   ];
 
@@ -203,4 +203,18 @@ searchBox.addEventListener("keyup", () => {
       item.style.display = "none";
     }
   });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+    });
 });
