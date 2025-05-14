@@ -40,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </nav>
     </div>
+    <div id="overlay"></div>
 `;
 
   window.gtranslateSettings = {
@@ -111,19 +112,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLink = header.querySelector(`a[href="${link.url}"]`);
     if (navLink && currentUrl.includes(link.url)) {
       navLink.classList.add("active");
+        document.getElementById('overlay').classList.remove('active');
+        document.getElementById('header').classList.remove('active');
     }
   });
 
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.querySelector(".nav-links");
+  const overlay = document.getElementById("overlay");
 
   hamburger.addEventListener("click", function () {
     navLinks.classList.toggle("active");
+      document.getElementById('overlay').classList.toggle('active');
+  });
+
+  overlay.addEventListener("click", function () {
+    navLinks.classList.remove("active");
+    document.getElementById('overlay').classList.remove('active');
   });
 
   document.querySelectorAll(".nav-links a").forEach((item) => {
     item.addEventListener("click", function () {
       navLinks.classList.remove("active");
+      document.getElementById('overlay').classList.remove('active');
     });
   });
 
