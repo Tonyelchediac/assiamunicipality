@@ -1,6 +1,18 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+}
+
 /* News Detail Card */
 .news-detail {
   background-color: #ffffff;
+  margin-top: 5dvh;
+  margin-bottom: 5dvh;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -16,7 +28,7 @@
 
 /* Title Styling with Underline */
 .news-detail h1 {
-  font-size: 32px;
+  font-size: clamp(25px, 2.5vw, 32px);
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 20px;
@@ -31,7 +43,7 @@
   bottom: 0;
   width: 150px;
   height: 3px;
-  background-color: #007bff;
+  background-color: var(--after-color, var(--secondary-color));
 }
 
 /* Meta Info */
@@ -43,7 +55,7 @@
 
 .news-meta i.far.fa-calendar-alt {
   margin-left: 5px;
-  color: #007bff;
+  color: var(--secondary-color);
 }
 
 .news-meta span {
@@ -58,16 +70,6 @@
   color: #4a4a4a;
 }
 
-/* Read More Link (if you add one) */
-.read-more {
-  display: inline-block;
-  margin-top: 25px;
-  color: #007bff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.read-more:hover {
-  color: #0056b3;
+#news-content {
+  white-space: pre-line;
 }

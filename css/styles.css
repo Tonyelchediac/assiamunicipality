@@ -248,6 +248,10 @@ nav a:hover, nav a.active {
     padding: 20px;
 }
 
+.news-content p{
+    line-height: 1.5rem;
+}
+
 .news-date {
     color: var(--text-light);
     font-size: 0.9rem;
@@ -260,6 +264,22 @@ nav a:hover, nav a.active {
     color: var(--secondary-color);
     font-weight: 500;
 }
+
+.view-more {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.view-more i {
+    font-size: 0.7rem;
+    color: var(--light-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.view-more:hover i {
+    transform: translateX(-5px);
+}
+
 
 /* Contact Section */
 .contact {

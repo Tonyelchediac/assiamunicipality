@@ -36,6 +36,9 @@
                 <button class="filter-btn" data-filter="announcement">إعلانات</button>
                 <button class="filter-btn" data-filter="event">فعاليات</button>
                 <button class="filter-btn" data-filter="project">مشاريع</button>
+                <button class="filter-btn" data-filter="health">صحة</button>
+                <button class="filter-btn" data-filter="culture">ثقافة</button>
+                <button class="filter-btn" data-filter="sport">رياضة</button>
                 <button class="filter-btn" data-filter="award">جوائز</button>
             </div>
             <div class="search-box">
@@ -72,7 +75,7 @@
 
       // Function to display news
       function displayNews(filteredNews) {
-        newsGrid.innerHTML = ""; // Clear previous content
+        newsGrid.innerHTML = "";
 
         filteredNews.forEach((item) => {
           const newsItem = document.createElement("div");
@@ -88,7 +91,7 @@
               </div>
               <h3 class="news-title">${item.title}</h3>
               <p class="news-excerpt">${item.excerpt}</p>
-              <a href="news-single.html?id=${item.id}" class="read-more">إقرأ المزيد <i class="fas fa-arrow-left"></i></a>
+              <a href="news-single.html?id=${item.id}" class="read-more" style="color: ${item['category color']}">إقرأ المزيد <i class="fas fa-arrow-left"></i></a>
             </div>
           `;
           
@@ -103,6 +106,9 @@
           فعاليات: "event",
           مشاريع: "project",
           جوائز: "award",
+          صحة: "health",
+          ثقافة: "culture",
+          رياضة: "sport",
         };
         return categories[categoryName] || "other";
       }

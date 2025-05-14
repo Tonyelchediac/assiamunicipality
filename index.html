@@ -16,7 +16,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+<section class="hero">
         <div class="container">
             <h2>
                 الـجـمـهـوريــة الـلـبـنـانـيــة <br>
@@ -27,6 +27,7 @@
             </h2>
         </div>
     </section>
+
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -61,31 +62,11 @@
     <section class="news">
         <div class="container">
             <h2 class="section-title">آخر الأخبار</h2>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-content">
-                        <h3>افتتاح حديقة جديدة في الحي الغربي</h3>
-                        <p class="news-date">15 مايو 2023</p>
-                        <p>تم اليوم افتتاح الحديقة الجديدة في الحي الغربي بحضور رئيس البلدية وعدد من المسؤولين.</p>
-                        <a href="#" class="read-more">إقرأ المزيد</a>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-content">
-                        <h3>حملة النظافة الربيعية</h3>
-                        <p class="news-date">10 مايو 2023</p>
-                        <p>تنظم البلدية حملة للنظافة تشمل جميع أحياء المدينة خلال الأسبوع القادم.</p>
-                        <a href="#" class="read-more">إقرأ المزيد</a>
-                    </div>
-                </div>
-                <div class="news-card">
-                    <div class="news-content">
-                        <h3>ورشة عمل حول التطوير الحضري</h3>
-                        <p class="news-date">5 مايو 2023</p>
-                        <p>تعقد البلدية ورشة عمل حول خطط التطوير الحضري للمدينة في العقد القادم.</p>
-                        <a href="#" class="read-more">إقرأ المزيد</a>
-                    </div>
-                </div>
+            <div class="news-grid" id="newsGrid">
+                <!-- News cards will be dynamically added here -->
+            </div>
+            <div class="view-more">
+                <a href="news.html" class="btn">عرض المزيد <i class="fas fa-arrow-left"></i></a>
             </div>
         </div>
     </section>
@@ -120,6 +101,36 @@
     <footer id="footer">
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
+<script>
+fetch('js/news.json')
+  .then(response => response.json())
+  .then(data => {
+    const newsSection = document.querySelector('.news-grid');
+    const newsItems = data.news.slice(0, 3);
+
+    newsItems.forEach(news => {
+      const card = document.createElement('div');
+      card.className = 'news-card';
+
+      // Determine title color
+      const titleColor = news["category color"] === "#e74c3c" ? "#e74c3c" : "#000";
+      const readMoreColor = news["category color"] === "#e74c3c" ? "#e74c3c" : "";
+
+      card.innerHTML = `
+        <div class="news-content">
+          <h3 style="color: ${titleColor}">${news.title}</h3>
+          <p class="news-date">${news.date}</p>
+          <p>${news.excerpt}</p>
+          <a href="news-single.html?id=${news.id}" class="read-more" style="color: ${readMoreColor}">إقرأ المزيد</a>
+        </div>
+      `;
+
+      newsSection.appendChild(card);
+    });
+  })
+  .catch(error => console.error('Error loading news:', error));
+</script>
+
 </body>
 </html>

@@ -150,16 +150,6 @@ document.addEventListener("DOMContentLoaded", function () {
       headerElem.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
     }
   });
-
-  const newsCards = document.querySelectorAll(".news-card");
-  newsCards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      card.querySelector("img").style.transform = "scale(1.05)";
-    });
-    card.addEventListener("mouseleave", () => {
-      card.querySelector("img").style.transform = "scale(1)";
-    });
-  });
 });
 
 
@@ -183,25 +173,6 @@ filterBtns.forEach((btn) => {
         item.style.display = "none";
       }
     });
-  });
-});
-
-// Search Functionality
-const searchBox = document.querySelector(".search-box input");
-searchBox.addEventListener("keyup", () => {
-  const searchTerm = searchBox.value.toLowerCase();
-
-  newsItems.forEach((item) => {
-    const title = item.querySelector(".news-title").textContent.toLowerCase();
-    const excerpt = item
-      .querySelector(".news-excerpt")
-      .textContent.toLowerCase();
-
-    if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
   });
 });
 
