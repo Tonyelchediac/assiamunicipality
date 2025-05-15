@@ -398,21 +398,13 @@
         flex-wrap: wrap;
     }
     
-    .tab-buttons {
-        flex-wrap: wrap;
-    }
-    
     .tab-btn {
         flex: 1;
         min-width: 120px;
     }
     
-    .event-card {
-        flex-direction: column;
-    }
-    
     .event-date {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 15px;
@@ -427,10 +419,6 @@
 
     .museums-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .tab-buttons {
-        flex-direction: column;
     }
     
     .owl-nav {

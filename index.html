@@ -102,34 +102,35 @@
     </footer>
 
     <script src="js/script.js" defer></script>
-<script>
-fetch('js/news.json')
-  .then(response => response.json())
-  .then(data => {
-    const newsSection = document.querySelector('.news-grid');
-    const newsItems = data.news.slice(0, 3);
 
-    newsItems.forEach(news => {
-      const card = document.createElement('div');
-      card.className = 'news-card';
+    <script>
+    fetch('js/news.json')
+    .then(response => response.json())
+    .then(data => {
+        const newsSection = document.querySelector('.news-grid');
+        const newsItems = data.news.slice(0, 3);
 
-      // Determine title color
-      const titleColor = news["category color"] === "#e74c3c" ? "#e74c3c" : "#000";
-      const readMoreColor = news["category color"] === "#e74c3c" ? "#e74c3c" : "";
+        newsItems.forEach(news => {
+        const card = document.createElement('div');
+        card.className = 'news-card';
 
-      card.innerHTML = `
-        <div class="news-content">
-          <h3 style="color: ${titleColor}">${news.title}</h3>
-          <p class="news-date">${news.date}</p>
-          <p>${news.excerpt}</p>
-          <a href="news-single.html?id=${news.id}" class="read-more" style="color: ${readMoreColor}">إقرأ المزيد</a>
-        </div>
-      `;
+        // Determine title color
+        const titleColor = news["category color"] === "#e74c3c" ? "#e74c3c" : "#000";
+        const readMoreColor = news["category color"] === "#e74c3c" ? "#e74c3c" : "";
 
-      newsSection.appendChild(card);
-    });
-  })
-  .catch(error => console.error('Error loading news:', error));
+        card.innerHTML = `
+            <div class="news-content">
+            <h3 style="color: ${titleColor}">${news.title}</h3>
+            <p class="news-date">${news.date}</p>
+            <p>${news.excerpt}</p>
+            <a href="news-single.html?id=${news.id}" class="read-more" style="color: ${readMoreColor}">إقرأ المزيد</a>
+            </div>
+        `;
+
+        newsSection.appendChild(card);
+        });
+    })
+    .catch(error => console.error('Error loading news:', error));
 </script>
 
 </body>
