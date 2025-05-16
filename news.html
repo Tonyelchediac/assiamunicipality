@@ -33,11 +33,11 @@
         <div class="container">
             <div class="filter-options">
                 <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="local">محلية</button>
                 <button class="filter-btn" data-filter="announcement">إعلانات</button>
                 <button class="filter-btn" data-filter="event">فعاليات</button>
                 <button class="filter-btn" data-filter="project">مشاريع</button>
                 <button class="filter-btn" data-filter="health">صحة</button>
-                <button class="filter-btn" data-filter="culture">ثقافة</button>
                 <button class="filter-btn" data-filter="sport">رياضة</button>
                 <button class="filter-btn" data-filter="award">جوائز</button>
             </div>
@@ -107,7 +107,7 @@
           مشاريع: "project",
           جوائز: "award",
           صحة: "health",
-          ثقافة: "culture",
+          محلية: "Local",
           رياضة: "sport",
         };
         return categories[categoryName] || "other";
