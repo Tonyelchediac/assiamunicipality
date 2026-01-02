@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <link rel="shortcut icon" href="images/assia municipality logo removed background.png" type="image/x-icon">
+    <title>بلدية أسيا - آخر الاخبار</title>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header id="header">
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h2>آخر الاخبار</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">رئيسية </a></li>
+                    <li class="active">آخر الاخبار</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- news section -->
+    <section class="news sec" id="news">
+        <div class="container">
+            <h2 class="section-title">آخر الاخبار</h2>
+            <div class="content">
+                <section id="newssection"></section>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+
+    <script>
+        // JSON file news reading
+        fetch('json/articles.json')
+            .then(res => res.json())
+            .then(data => {
+                const section = document.getElementById('newssection');
+                section.innerHTML = '';
+                data.news.forEach(article => {
+                    const div = document.createElement('div');
+                    div.className = 'article-card';
+                    div.innerHTML = `
+      <img src="${article.image}" alt="">
+      <h3>${article.title}</h3>
+    `;
+                    div.onclick = () => {
+                        window.location.href = `article.html?id=${article.id}`;
+                    };
+                    section.appendChild(div);
+                });
+            })
+            .catch(err => console.error('JSON ERROR:', err));
+    </script>
+</body>
+
+</html>

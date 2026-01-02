@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="الموقع الرسمي لبلدية أسيا - الجمهورية اللبنانية">
+    <link rel="shortcut icon" href="images/assia municipality.jpg" type="image/x-icon">
+    <title>تقديم شكوى - بلدية المدينة</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/complaints.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner complaints-banner">
+        <div class="container">
+            <h2>تقديم شكوى</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">رئيسية</a></li>
+                    <li class="active">تقديم شكوى</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- page content Section -->
+    <section class="about-section sec">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="titlelocleft">نرحم بملاحظاتكم وشكاويكم</h2>
+                    <p>تسعى بلدية المدينة لتلقي شكاوى المواطنين والعمل على حلها في أسرع وقت ممكن. نضمن لكم أن كل شكوى يتم التعامل معها بسرية تامة وبجدية كبيرة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complaint Types -->
+    <section class="complaint-types">
+        <div class="container">
+            <h2 class="section-title">أنواع الشكاوى التي يمكن تقديمها</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-trash"></i>
+                    <h3>النظافة العامة</h3>
+                    <p>شكاوى متعلقة بالنظافة وجمع النفايات</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-road"></i>
+                    <h3>صيانة الطرق</h3>
+                    <p>شكاوى متعلقة بالطرق والأرصفة</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>إنارة الشوارع</h3>
+                    <p>شكاوى متعلقة بالإنارة العامة</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-tree"></i>
+                    <h3>الحدائق العامة</h3>
+                    <p>شكاوى متعلقة بالحدائق والمساحات الخضراء</p>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>المباني المخالفة</h3>
+                    <p>شكاوى متعلقة بالمخالفات البلدية</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-car"></i>
+                    <h3>المرور والمواقف</h3>
+                    <p>شكاوى متعلقة بالمواقف والازدحام المروري</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complaint Form -->
+    <section class="complaint-form sec">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="section-title">نموذج تقديم شكوى</h2>
+                <p class="form-description">يرجى تعبئة النموذج التالي وسيتم التواصل معكم في أقرب وقت ممكن</p>
+                
+                <form id="complaintForm" class="complaint-form">
+                    <div class="form-step" id="step1">
+                        <h3 class="titlelocleft">الخطوة 1: المعلومات الشخصية</h3>
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">العنوان</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+                                            
+                    <div class="form-step" id="step2">
+                        <h3 class="titlelocleft">الخطوة 2: تفاصيل الشكوى</h3>
+                        <div class="form-group">
+                            <label for="complaintType">نوع الشكوى *</label>
+                            <select id="complaintType" name="complaintType" required>
+                                <option value="">اختر نوع الشكوى</option>
+                                <option value="النظافة العامة">النظافة العامة</option>
+                                <option value="صيانة الطرق">صيانة الطرق</option>
+                                <option value="إنارة الشوارع">إنارة الشوارع</option>
+                                <option value="الحدائق العامة">الحدائق العامة</option>
+                                <option value="المباني المخالفة">المباني المخالفة</option>
+                                <option value="المرور والمواقف">المرور والمواقف</option>
+                                <option value="أخرى">أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="complaintLocation">موقع الشكوى *</label>
+                            <input type="text" id="complaintLocation" name="complaintLocation" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="complaintLocation">صورة الشكوى *</label>
+                            <input type="file" id="complaintLocation" name="complaintLocation" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="complaintDetails">تفاصيل الشكوى *</label>
+                            <textarea id="complaintDetails" name="complaintDetails" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                            <label for="agreeTerms">أوافق على شروط الخدمة وسياسة الخصوصية وعلى محتوى الشكوى*</label>
+                        </div>
+                        
+                        <div class="form-navigation">
+                            <input type="submit" class="btn submit-btn" value="إرسال">
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">أسئلة متكررة</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>ما هي مدة معالجة الشكوى؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>تختلف مدة معالجة الشكوى حسب نوعها وتعقيدها. معظم الشكاوى يتم الرد عليها خلال 48 ساعة، وقد تستغرق بعض الشكاوى حتى 5 أيام عمل للحل النهائي.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل يمكنني تقديم شكوى anonymously؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، يمكنك تقديم شكوى دون ذكر بياناتك الشخصية، ولكن هذا قد يحد من قدرتنا على متابعة الشكوى معك أو إعلامك بالحل.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل جميع الشكاوى يتم التعامل معها بسرية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، جميع الشكاوى يتم التعامل معها بسرية تامة ولا يتم مشاركة بياناتك مع أي جهة خارجية.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل هناك رسوم لتقديم الشكوى؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>لا، تقديم الشكوى مجاني بالكامل ولا يتطلب أي رسوم.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+    </script>
+</body>
+</html>

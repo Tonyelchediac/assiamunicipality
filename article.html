@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <link rel="shortcut icon" href="images/assia municipality logo removed background.png" type="image/x-icon">
+    <title>بلدية أسيا - الخبر</title>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header id="header">
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h2>ألـخـبـر</h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">رئيسية </a></li>
+                    <li class="active">ألخبر</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- article -->
+    <section class="article">
+        <div class="article-design">
+            <div id="article-content"></div>
+            <div class="share" id="share-container" style="display: none;">
+                <p>مشاركة عبر تطبيق واتساب</p>
+                <a id="share-whatsapp" class="whatsapp-link"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+    </footer>
+
+    <!-- script content -->
+    <script>
+        // Function to share on WhatsApp
+        function shareOnWhatsapp(title, url) {
+            const message = `بلدية أسيا\n\n*${title}*\n\nالمزيد من التفاصيل:\n${url}`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        const contentDiv = document.getElementById('article-content');
+        const shareContainer = document.getElementById('share-container');
+        const shareBtn = document.getElementById('share-whatsapp');
+
+        if (!id) {
+            contentDiv.innerHTML = "<h2>لم يتم العثور على المقال</h2>";
+        } else {
+            fetch('json/articles.json')
+                .then(res => res.json())
+                .then(data => {
+                    const post = data.news.find(a => a.id == id);
+                    if (!post) {
+                        contentDiv.innerHTML = "<h2>المقال غير موجود</h2>";
+                    } else {
+                        contentDiv.innerHTML = `
+                            <h1>${post.title}</h1>
+                            <div class="small-date"><i class="far fa-calendar-alt" id="calendar-icon"></i>${post.date}</div>
+                            ${post.image ? `<img src="${post.image}" alt="${post.title}">` : ''}
+                            <p>${post.content.replace(/\n/g, '<br>')}</p>
+                        `;
+
+                        // Show share button and set its onclick
+                        shareContainer.style.display = "block";
+                        shareBtn.onclick = () => shareOnWhatsapp(post.title, window.location.href);
+                    }
+                })
+                .catch(err => {
+                    contentDiv.innerHTML = "<h2>خطأ في تحميل المقال</h2>";
+                    console.error(err);
+                });
+        }
+    </script>
+
+</body>
+</html>

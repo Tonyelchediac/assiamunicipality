@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* ===== Fonts ===== */
+@font-face {
+  font-family: "Arabic Typesetting Regular";
+  src: url("../fonts/arabtype.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  direction: rtl;
+  background: var(--background-color);
+}
+
+.article-design {
+  margin: 40px 0;
+}
+
+#article-content {
+  background: var(--third-color);
+  width: 100%;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+#article-content h1 {
+    position: relative;
+  width: 100%;
+  text-align: right;
+  font-size: var(--font-size-xl);
+  line-height: 1.8;
+  color: var(--primary-color);
+  padding-bottom: 5px;
+}
+
+#article-content h1::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+#calendar-icon{
+    margin-left: 5px;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+
+.small-date{
+margin-top: 20px;
+font-size: var(--font-size-sm);
+opacity: 0.7;
+}
+
+#article-content p {
+    margin-top: 20px;
+  width: 100%;
+  text-align: right;
+  font-size: var(--font-size-md);
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+#article-content img {
+  display: block;
+  margin: 0 auto;
+  width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.share{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.share p{
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    padding-bottom: 5px;
+    color: var(--primary-color);
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.share p::after{
+    content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+.whatsapp-link {
+  display: flex;
+  gap: 15px;
+}
+
+.whatsapp-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--third-color);
+  color: var(--primary-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: var(--second-text-color);
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+@media screen and (max-width: 900px) {
+  #article-content img{
+    width: 100%;
+    height: 100%;
+  }
+}
