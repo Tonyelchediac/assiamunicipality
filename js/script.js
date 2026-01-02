@@ -4,21 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentUrl = window.location.href;
 
   const navLinksData = [
-    { url: "./index.html", text: "رئيسية" },
-    { url: "./about.html", text: "عن البلدية" },
-    { url: "./news.html", text: "آخر الأخبار" },
-    { url: "./health.html", text: "صحة ورعاية إجتماعية" },
-    { url: "./tourismCulture.html", text: "سياحة وثقافة" },
-    { url: "./events.html", text: "مهرجانات ونشاطات" },
-    { url: "./sports.html", text: "رياضة" },
-    { url: "./contact.html", text: "تواصل" },
-    { url: "./complaints.html", text: "تقديم شكوى" },
+    { url: "index.html", text: "رئيسية" },
+    { url: "about.html", text: "عن البلدية" },
+    { url: "news.html", text: "آخر الأخبار" },
+    { url: "health.html", text: "صحة ورعاية إجتماعية" },
+    { url: "tourismCulture.html", text: "سياحة وثقافة" },
+    { url: "events.html", text: "مهرجانات ونشاطات" },
+    { url: "sports.html", text: "رياضة" },
+    { url: "contact.html", text: "تواصل" },
+    { url: "complaints.html", text: "تقديم شكوى" },
   ];
 
   header.innerHTML = `
     <label class="navlink-open" id="navlink-open"></label>
     <div class="logo-img">
-        <img src="./images/assia municipality logo removed background.png" alt="Logo">
+        <img src="images/assia municipality logo removed background.png" alt="Logo">
     </div>
     <section id="header1">
         <div class="part1"></div>
