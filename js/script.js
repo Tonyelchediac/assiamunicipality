@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   header.innerHTML = `
     <label class="navlink-open" id="navlink-open"></label>
     <div class="logo-img">
-        <img src="../images/assia municipality logo removed background.png" alt="Logo">
+        <img src="./images/assia municipality logo removed background.png" alt="Logo">
     </div>
     <section id="header1">
         <div class="part1"></div>
