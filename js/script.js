@@ -1,3 +1,24 @@
+// loader
+const loaders = document.createElement("div");
+loaders.className = "loader";
+loaders.id = "loader";
+loaders.innerHTML = `
+    <img src="../images/assia municipality logo removed background.png" alt="Loader Image" />
+`;
+document.body.appendChild(loaders);
+const loader = document.getElementById("loader");
+window.addEventListener("load", () => {
+  let opacity = 1;
+  const fadeOut = setInterval(() => {
+    opacity -= 0.05;
+    loader.style.opacity = opacity;
+    if (opacity <= 0) {
+      clearInterval(fadeOut);
+      loader.style.display = "none";
+    }
+  }, 10);
+});
+
 // Header HTML
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.getElementById("header");
@@ -10,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { url: "health.html", text: "صحة ورعاية إجتماعية" },
     { url: "tourismCulture.html", text: "سياحة وثقافة" },
     { url: "events.html", text: "مهرجانات ونشاطات" },
-    { url: "sports.html", text: "رياضة" },
+    { url: "Sports.html", text: "رياضة" },
     { url: "contact.html", text: "تواصل" },
     { url: "complaints.html", text: "تقديم شكوى" },
   ];
@@ -18,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   header.innerHTML = `
     <label class="navlink-open" id="navlink-open"></label>
     <div class="logo-img">
-        <img src="images/assia municipality logo removed background.png" alt="Logo">
+        <img src="../images/assia municipality logo removed background.png" alt="Logo">
     </div>
     <section id="header1">
         <div class="part1"></div>
@@ -97,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
                       <p>نعمل من أجل خدمتكم وتطوير بلدتنا لتكون مكاناً أفضل للعيش والعمل.</p>
                       <div class="social-links">
                           <a href="#"><i class="fab fa-facebook-f"></i></a>
-                          <a href="https://www.instagram.com/assiamunicipalityofficial"><i class="fab fa-instagram"></i></a>
+                          <a href="#"><i class="fab fa-instagram"></i></a>
                       </div>
                   </div>
                   <div class="footer-col">
@@ -110,13 +131,24 @@ document.addEventListener("DOMContentLoaded", function () {
                   </div>
               </div>
               <div class="footer-bottom">
-                  <p>&copy; 2025 بلدية أسيا. جميع الحقوق محفوظة.</p>
+                  <p>&copy; <script>document.write(new Date().getFullYear());</script> بلدية أسيا. جميع الحقوق محفوظة.</p>
                   <div class="footer-links">
                     <a href="#" id="privacy-policy-link">سياسة الخصوصية</a>
                     <a href="#" id="terms-of-use-link">شروط الاستخدام</a>
                   </div>
-                  <p>By <a href="">ChediX</a></p>
+
+              <!-- developed by chedilex -->
+              <div style="direction: ltr;">
+                      <p style=" color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; display: flex; justify-content: center; align-items: center;">
+                  Developed by
+                  <a href="https://chedilex.pages.dev/" style="display: flex; align-items: center; text-decoration: none; color: rgba(255, 255, 255, 0.7);">
+                      <img src="https://lh3.googleusercontent.com/u/0/d/1FcuIbslkUGQmfqVicOfyHkeB3dlJ16v5" alt="chedix logo" style="height: 25px;">
+                      <span style="color: rgba(255, 255, 255, 0.7);">Chedilex</span>
+                  </a>
+                      </p>
               </div>
+
+            </div>
           </div>
   `;
 });
@@ -163,33 +195,33 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-        // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const answer = question.nextElementSibling;
-                
-                // Close other items
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                        otherItem.querySelector('.faq-question i').className = 'fas fa-chevron-down';
-                    }
-                });
-                
-                // Toggle current item
-                item.classList.toggle('active');
-                
-                if (item.classList.contains('active')) {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    question.querySelector('i').className = 'fas fa-chevron-up';
-                } else {
-                    answer.style.maxHeight = null;
-                    question.querySelector('i').className = 'fas fa-chevron-down';
-                }
-            });
-        });
-        
+// FAQ Accordion
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach((question) => {
+  question.addEventListener("click", () => {
+    const item = question.parentElement;
+    const answer = question.nextElementSibling;
+
+    // Close other items
+    document.querySelectorAll(".faq-item").forEach((otherItem) => {
+      if (otherItem !== item) {
+        otherItem.classList.remove("active");
+        otherItem.querySelector(".faq-answer").style.maxHeight = null;
+        otherItem.querySelector(".faq-question i").className =
+          "fas fa-chevron-down";
+      }
+    });
+
+    // Toggle current item
+    item.classList.toggle("active");
+
+    if (item.classList.contains("active")) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      question.querySelector("i").className = "fas fa-chevron-up";
+    } else {
+      answer.style.maxHeight = null;
+      question.querySelector("i").className = "fas fa-chevron-down";
+    }
+  });
+});

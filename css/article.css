@@ -22,7 +22,7 @@ body {
   margin: 40px 0;
 }
 
-#article-content {
+#article-content-design {
   background: var(--third-color);
   width: 100%;
   padding: 20px;
@@ -30,7 +30,7 @@ body {
 }
 
 #article-content h1 {
-    position: relative;
+  position: relative;
   width: 100%;
   text-align: right;
   font-size: var(--font-size-xl);
@@ -40,7 +40,7 @@ body {
 }
 
 #article-content h1::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   bottom: 0;
@@ -49,21 +49,20 @@ body {
   background-color: var(--secondary-color);
 }
 
-#calendar-icon{
-    margin-left: 5px;
-    color: var(--secondary-color);
-    font-weight: bold;
+#calendar-icon {
+  margin-left: 5px;
+  color: var(--secondary-color);
+  font-weight: bold;
 }
 
-
-.small-date{
-margin-top: 20px;
-font-size: var(--font-size-sm);
-opacity: 0.7;
+.small-date {
+  margin-top: 20px;
+  font-size: var(--font-size-sm);
+  opacity: 0.7;
 }
 
 #article-content p {
-    margin-top: 20px;
+  margin-top: 50px;
   width: 100%;
   text-align: right;
   font-size: var(--font-size-md);
@@ -75,31 +74,31 @@ opacity: 0.7;
   display: block;
   margin: 0 auto;
   width: 500px;
-  height: auto;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.share{
-    display: flex;
-    justify-content: end;
-    flex-direction: column;
-    margin: 20px;
+.share {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  margin: 20px 0;
 }
 
-.share p{
-    font-size: var(--font-size-md);
-    font-weight: bold;
-    padding-bottom: 5px;
-    color: var(--primary-color);
-    position: relative;
-    margin-bottom: 10px;
+.share p {
+  font-size: var(--font-size-md);
+  font-weight: bold;
+  padding-bottom: 5px;
+  color: var(--primary-color);
+  position: relative;
+  margin-bottom: 10px;
 }
 
-.share p::after{
-    content: '';
+.share p::after {
+  content: "";
   position: absolute;
   right: 0;
   bottom: 0;
@@ -113,7 +112,7 @@ opacity: 0.7;
   gap: 15px;
 }
 
-.whatsapp-link{
+.whatsapp-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,8 +131,8 @@ opacity: 0.7;
 }
 
 @media screen and (max-width: 900px) {
-  #article-content img{
-    width: 100%;
-    height: 100%;
+  #article-content img {
+    width: 350px;
+    height: 350px;
   }
 }
