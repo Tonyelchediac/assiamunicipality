@@ -3,7 +3,7 @@ const loaders = document.createElement("div");
 loaders.className = "loader";
 loaders.id = "loader";
 loaders.innerHTML = `
-    <img src="../images/assia municipality logo removed background.png" alt="Loader Image" />
+    <img src="images/assia municipality logo removed background.png" alt="Loader Image" />
 `;
 document.body.appendChild(loaders);
 const loader = document.getElementById("loader");
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   header.innerHTML = `
     <label class="navlink-open" id="navlink-open"></label>
     <div class="logo-img">
-        <img src="../images/assia municipality logo removed background.png" alt="Logo">
+        <img src="images/assia municipality logo removed background.png" alt="Logo">
     </div>
     <section id="header1">
         <div class="part1"></div>
