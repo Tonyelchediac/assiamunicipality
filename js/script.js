@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { url: "health.html", text: "صحة ورعاية إجتماعية" },
     { url: "tourismCulture.html", text: "سياحة وثقافة" },
     { url: "events.html", text: "مهرجانات ونشاطات" },
-    { url: "Sports.html", text: "رياضة" },
+    { url: "sports.html", text: "رياضة" },
     { url: "contact.html", text: "تواصل" },
     { url: "complaints.html", text: "تقديم شكوى" },
   ];

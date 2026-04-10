@@ -633,6 +633,32 @@ details ul {
 }
 
 /* Discover Section */
+
+.liveloveassialogo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liveloveassialogo a {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: white;
+  padding: 0 10px 0 5px;
+}
+
+.liveloveassialogo p {
+  font-size: var(--font-size-sm);
+}
+
+.liveloveassialogo img {
+  max-width: 40px;
+}
+
 .places-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -676,17 +702,6 @@ details ul {
 
 .place-info h3 {
   margin-bottom: 20px;
-}
-
-.tourismimagesection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.tourismimagesection img {
-  height: 400px;
 }
 
 /* Gallery Styles */
